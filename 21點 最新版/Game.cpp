@@ -1,10 +1,11 @@
 #include "Game.h"
 #include <iostream>
+using namespace std;
 
 Game::Game() : deck(), player(), dealer() {}
 
 void Game::play() {
-    std::cout << "Welcome to Blackjack!" << std::endl;
+    cout << "Welcome to 21point!" << endl;
 
     // Initial draw
     player.drawCard(deck);
@@ -12,22 +13,22 @@ void Game::play() {
     player.drawCard(deck);
     dealer.drawCard(deck);
 
-    std::cout << "Your hand: ";
+    cout << "Your hand: ";
     player.showHand();
-    std::cout << "Dealer's hand: ";
+    cout << "Computer's hand: ";
     dealer.showHand();
 
     char choice;
     while (true) {
-        std::cout << "Do you want to hit or stand? (h/s): ";
-        std::cin >> choice;
+        cout << "Do you want to hit or stand? (h/s): ";
+        cin >> choice;
         if (choice == 'h') {
             player.drawCard(deck);
-            std::cout << "Your hand: ";
+            cout << "Your hand: ";
             player.showHand();
 
             if (player.getHandValue() > 21) {
-                std::cout << "You busted! Dealer wins." << std::endl;
+                cout << "You busted! Computer wins." << endl;
                 return;
             }
         }
@@ -35,7 +36,7 @@ void Game::play() {
             break;
         }
         else {
-            std::cout << "Invalid choice. Please enter 'h' to hit or 's' to stand." << std::endl;
+            cout << "Invalid choice. Please enter 'h' to hit or 's' to stand." << endl;
         }
     }
 
@@ -44,7 +45,7 @@ void Game::play() {
         dealer.drawCard(deck);
     }
 
-    std::cout << "Dealer's hand: ";
+    cout << "Computer hand: ";
     dealer.showHand();
 
     // Determine winner
@@ -52,12 +53,12 @@ void Game::play() {
     int dealerValue = dealer.getHandValue();
 
     if (dealerValue > 21 || playerValue > dealerValue) {
-        std::cout << "You win!" << std::endl;
+        cout << "You win!" << endl;
     }
     else if (playerValue == dealerValue) {
-        std::cout << "It's a tie!" << std::endl;
+        cout << "It's a tie!" << endl;
     }
     else {
-        std::cout << "Dealer wins." << std::endl;
+        cout << "Computer wins." << endl;
     }
 }
