@@ -6,7 +6,7 @@
 using namespace std;
 
 Deck::Deck() {
-    for (int i = 1; i <= 10; ++i) {
+    for (int i = 1; i <= 13; ++i) {
         for (int j = 0; j < 4; ++j) {
             cards.push_back(Card(i));
         }
