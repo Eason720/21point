@@ -1,5 +1,6 @@
 #ifndef DECK_H
 #define DECK_H
+using namespace std;
 
 #include <vector>
 #include "Card.h"
@@ -11,7 +12,7 @@ public:
     Card drawCard();
 
 private:
-    std::vector<Card> cards;
+    vector<Card> cards;
 };
 
 #endif // DECK_H
