@@ -1,5 +1,6 @@
 #include "Player.h"
 #include <iostream>
+using namespace std;
 
 void Player::drawCard(Deck& deck) {
     hand.push_back(deck.drawCard());
@@ -15,7 +16,7 @@ int Player::getHandValue() const {
 
 void Player::showHand() const {
     for (const auto& card : hand) {
-        std::cout << card.getValue() << " ";
+        cout << card.getValue() << " ";
     }
-    std::cout << std::endl;
+    cout << endl;
 }
