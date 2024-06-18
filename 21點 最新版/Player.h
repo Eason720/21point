@@ -1,5 +1,6 @@
 #ifndef PLAYER_H
 #define PLAYER_H
+using namespace std;
 
 #include <vector>
 #include "Card.h"
@@ -12,7 +13,7 @@ public:
     void showHand() const;
 
 private:
-    std::vector<Card> hand;
+    vector<Card> hand;
 };
 
 #endif // PLAYER_H
